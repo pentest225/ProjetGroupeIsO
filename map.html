@@ -127,7 +127,7 @@
     }
 
     .map-container {
-        background-image: url('https://dl.dropbox.com/u/14898/Photos/leaflet-screenshot.png');
+        background-image: url('https://upload.wikimedia.org/wikipedia/commons/3/3e/Leaflet_beige_screenshot.png');
         background-size: cover;
     }
 
@@ -412,108 +412,108 @@
                     }).addTo(map.map);
                 }
             })
-            $('#action').on('click',function(e){
-                e.preventDefault()
-                let latitude=map.lat;
-                let longitude=map.lng;
-                $.ajax({
-                    type:'POST',
-                    url:'../controller/map_controller.php',
-                    dataType:'json',
-                    data:{action:'insert',lat:latitude,lng:longitude},
-                    success:function(data){
-                        window.location.reload()
-                    },
-                    error:function(){
-                        alert('error')
-                    }
-                })
-            })
+            // $('#action').on('click',function(e){
+            //     e.preventDefault()
+            //     let latitude=map.lat;
+            //     let longitude=map.lng;
+            //     $.ajax({
+            //         type:'POST',
+            //         url:'../controller/map_controller.php',
+            //         dataType:'json',
+            //         data:{action:'insert',lat:latitude,lng:longitude},
+            //         success:function(data){
+            //             window.location.reload()
+            //         },
+            //         error:function(){
+            //             alert('error')
+            //         }
+            //     })
+            // })
 
 
         })
-        $.ajax({
-            type: 'POST',
-            url: '../controller/map_controller.php',
-            dataType: 'json',
-            data: {action: 'selectAll'},
-            success: function (data) {
-                let Mdata = data.data
-                if (Mdata.length != 0) {
-                    Mdata.forEach(function (user) {
-                        if (user.status == 0) {
-                            let custonIcon = L.icon({
-                                iconUrl: 'https://raw.githubusercontent.com/stephsalou/projet_constructruction/master/views/static/img/maps_icons/icon-1.png',
-                                iconSize: [50, 50]
-                            })
-                            let json = {
-                                'lng': user.lng,
-                                'lat': user.lat
-                            }
-//                    let form=formulaire pour demander confirmation de marker
-                            let markerOptions = {
-                                title: 'en attente de confirmation',
-                                clickable: true,
-                                draggable: false,
-                                icon: custonIcon
-                            }
-                            let mark = L.marker([user.lat, user.lng], markerOptions);
-                            console.dir(mark)
-                            L.marker([json.lat, json.lng], markerOptions).addTo(map.map).bindPopup(mark.options.title).openPopup();
-                            let LGrp = L.layerGroup([mark])
-                            LGrp.eachLayer(function (obj) {
-                                if (obj instanceof L.Marker) { // test if the object is a marker
-                                    // get the position of the marker with getLatLng
-                                    // and draw a circle at that position
+//         $.ajax({
+//             type: 'POST',
+//             url: '../controller/map_controller.php',
+//             dataType: 'json',
+//             data: {action: 'selectAll'},
+//             success: function (data) {
+//                 let Mdata = data.data
+//                 if (Mdata.length != 0) {
+//                     Mdata.forEach(function (user) {
+//                         if (user.status == 0) {
+//                             let custonIcon = L.icon({
+//                                 iconUrl: 'https://raw.githubusercontent.com/stephsalou/projet_constructruction/master/views/static/img/maps_icons/icon-1.png',
+//                                 iconSize: [50, 50]
+//                             })
+//                             let json = {
+//                                 'lng': user.lng,
+//                                 'lat': user.lat
+//                             }
+// //                    let form=formulaire pour demander confirmation de marker
+//                             let markerOptions = {
+//                                 title: 'en attente de confirmation',
+//                                 clickable: true,
+//                                 draggable: false,
+//                                 icon: custonIcon
+//                             }
+//                             let mark = L.marker([user.lat, user.lng], markerOptions);
+//                             console.dir(mark)
+//                             L.marker([json.lat, json.lng], markerOptions).addTo(map.map).bindPopup(mark.options.title).openPopup();
+//                             let LGrp = L.layerGroup([mark])
+//                             LGrp.eachLayer(function (obj) {
+//                                 if (obj instanceof L.Marker) { // test if the object is a marker
+//                                     // get the position of the marker with getLatLng
+//                                     // and draw a circle at that position
 
-                                    L.circle(obj.getLatLng(), 35, {
-                                        color: 'blue',
-                                        fillColor: 'blue'
-                                    }).addTo(map.map);
-                                }
-                            })
-                        } else {
+//                                     L.circle(obj.getLatLng(), 35, {
+//                                         color: 'blue',
+//                                         fillColor: 'blue'
+//                                     }).addTo(map.map);
+//                                 }
+//                             })
+//                         } else {
 
-                            let custonIcon = L.icon({
-                                iconUrl: 'https://raw.githubusercontent.com/stephsalou/projet_constructruction/master/views/static/img/maps_icons/icon-1.png',
-                                iconSize: [50, 50]
-                            })
-                            let json = {
-                                'lng': user.lng,
-                                'lat': user.lat
-                            }
-//                    let form=formulaire pour demander confirmation de marker
-                            let markerOptions = {
-                                title: user.username,
-                                clickable: true,
-                                draggable: false,
-                                icon: custonIcon
-                            }
-                            let mark = L.marker([user.lat, user.lng], markerOptions);
+//                             let custonIcon = L.icon({
+//                                 iconUrl: 'https://raw.githubusercontent.com/stephsalou/projet_constructruction/master/views/static/img/maps_icons/icon-1.png',
+//                                 iconSize: [50, 50]
+//                             })
+//                             let json = {
+//                                 'lng': user.lng,
+//                                 'lat': user.lat
+//                             }
+// //                    let form=formulaire pour demander confirmation de marker
+//                             let markerOptions = {
+//                                 title: user.username,
+//                                 clickable: true,
+//                                 draggable: false,
+//                                 icon: custonIcon
+//                             }
+//                             let mark = L.marker([user.lat, user.lng], markerOptions);
 
-                            L.marker([json.lat, json.lng], markerOptions).addTo(map.map).bindPopup(mark.options.title).openPopup();
-                            let LGrp = L.layerGroup([mark])
-                            LGrp.eachLayer(function (obj) {
-                                if (obj instanceof L.Marker) { // test if the object is a marker
-                                    // get the position of the marker with getLatLng
-                                    // and draw a circle at that position
+//                             L.marker([json.lat, json.lng], markerOptions).addTo(map.map).bindPopup(mark.options.title).openPopup();
+//                             let LGrp = L.layerGroup([mark])
+//                             LGrp.eachLayer(function (obj) {
+//                                 if (obj instanceof L.Marker) { // test if the object is a marker
+//                                     // get the position of the marker with getLatLng
+//                                     // and draw a circle at that position
 
-                                    L.circle(obj.getLatLng(), 35, {
-                                        color: 'green',
-                                        fillColor: 'green'
-                                    }).addTo(map.map);
-                                }
-                            })
-                        }
-                    })
-                } else {
-                    console.log('donnes vide')
-                }
-            },
-            error: function () {
-                alert('error')
-            }
-        })
+//                                     L.circle(obj.getLatLng(), 35, {
+//                                         color: 'green',
+//                                         fillColor: 'green'
+//                                     }).addTo(map.map);
+//                                 }
+//                             })
+//                         }
+//                     })
+//                 } else {
+//                     console.log('donnes vide')
+//                 }
+//             },
+//             error: function () {
+//                 alert('error')
+//             }
+//         })
         //marker
         /*  var custonIcon=L.icon({
          iconUrl: 'static/img/maps_icons/icone_verte_home.png',
@@ -537,57 +537,57 @@
          */
 
         /////////my script //////////////
-        $('#deconnexion').on('click', function (e) {
-            e.preventDefault()
-            let logout = {
-                logout: true
-            }
-            $.ajax({
-                type: 'GET',
-                url: '../controller/user_controller.php',
-                dataType: 'json',
-                data: logout,
-                success: function (result) {
-                    if (result) {
-                        window.location.reload(true)
-                    } else {
-                        var alert = "<div class=\"alert alert-danger alert-dismissible fade show\" role=\"alert\" \><button type=\"button\"  data-dismiss=\"alert\" aria-label=\"alert\"> <span aria-hidden=\"true\">\&times;</span></button> \<a href=\"#\" class=\"alert-link\">impossible de vous deconnecter </div>"
-                        $(alert).insertBefore('.container-fluid')
-                    }
-                },
-                error: function (e) {
-                    console.dir(e)
-                    var alert = "<div class=\"alert alert-danger alert-dismissible fade show\" role=\"alert\" \><button type=\"button\"  data-dismiss=\"alert\" aria-label=\"alert\"> <span aria-hidden=\"true\">\&times;</span></button> \<a href=\"#\" class=\"alert-link\">impossible de vous deconnecter </div>"
-                    $(alert).insertBefore('.container-fluid')
-                }
+        // $('#deconnexion').on('click', function (e) {
+        //     e.preventDefault()
+        //     let logout = {
+        //         logout: true
+        //     }
+        //     $.ajax({
+        //         type: 'GET',
+        //         url: '../controller/user_controller.php',
+        //         dataType: 'json',
+        //         data: logout,
+        //         success: function (result) {
+        //             if (result) {
+        //                 window.location.reload(true)
+        //             } else {
+        //                 var alert = "<div class=\"alert alert-danger alert-dismissible fade show\" role=\"alert\" \><button type=\"button\"  data-dismiss=\"alert\" aria-label=\"alert\"> <span aria-hidden=\"true\">\&times;</span></button> \<a href=\"#\" class=\"alert-link\">impossible de vous deconnecter </div>"
+        //                 $(alert).insertBefore('.container-fluid')
+        //             }
+        //         },
+        //         error: function (e) {
+        //             console.dir(e)
+        //             var alert = "<div class=\"alert alert-danger alert-dismissible fade show\" role=\"alert\" \><button type=\"button\"  data-dismiss=\"alert\" aria-label=\"alert\"> <span aria-hidden=\"true\">\&times;</span></button> \<a href=\"#\" class=\"alert-link\">impossible de vous deconnecter </div>"
+        //             $(alert).insertBefore('.container-fluid')
+        //         }
 
-            })
-        })
+        //     })
+        // })
 
-        $('#connex').on('submit', function (e) {
-            e.preventDefault()
-            let formdata = $('#connex').serialize();
-            $.ajax({
-                type: 'post',
-                url: '../controller/user_controller.php',
-                dataType: 'json',
-                data: formdata,
-                success: function (data) {
-                    if (data.status) {
-                        var alert = "<div class=\"alert alert-danger alert-dismissible fade show\" role=\"alert\" \><button type=\"button\"  data-dismiss=\"alert\" aria-label=\"alert\"> <span aria-hidden=\"true\">\&times;</span></button> \<a href=\"#\" class=\"alert-link\">" + data.message + "\</div>"
-                        $(alert).insertBefore('.container-fluid')
-                    } else {
-                        window.location.reload(true)
+        // $('#connex').on('submit', function (e) {
+        //     e.preventDefault()
+        //     let formdata = $('#connex').serialize();
+        //     $.ajax({
+        //         type: 'post',
+        //         url: '../controller/user_controller.php',
+        //         dataType: 'json',
+        //         data: formdata,
+        //         success: function (data) {
+        //             if (data.status) {
+        //                 var alert = "<div class=\"alert alert-danger alert-dismissible fade show\" role=\"alert\" \><button type=\"button\"  data-dismiss=\"alert\" aria-label=\"alert\"> <span aria-hidden=\"true\">\&times;</span></button> \<a href=\"#\" class=\"alert-link\">" + data.message + "\</div>"
+        //                 $(alert).insertBefore('.container-fluid')
+        //             } else {
+        //                 window.location.reload(true)
 
-                    }
-                },
-                error: function (data) {
-                    var alert = "<div class=\"alert alert-danger alert-dismissible fade show\" role=\"alert\" \><button type=\"button\"  data-dismiss=\"alert\" aria-label=\"alert\"> <span aria-hidden=\"true\">\&times;</span></button> \<a href=\"#\" class=\"alert-link\">impossible de vous connecter </div>"
-                    $(alert).insertBefore('.container-fluid')
-                }
+        //             }
+        //         },
+        //         error: function (data) {
+        //             var alert = "<div class=\"alert alert-danger alert-dismissible fade show\" role=\"alert\" \><button type=\"button\"  data-dismiss=\"alert\" aria-label=\"alert\"> <span aria-hidden=\"true\">\&times;</span></button> \<a href=\"#\" class=\"alert-link\">impossible de vous connecter </div>"
+        //             $(alert).insertBefore('.container-fluid')
+        //         }
 
-            })
-        })
+        //     })
+        // })
 
     })
 
