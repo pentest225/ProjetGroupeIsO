@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>navbar</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://raw.githubusercontent.com/daneden/animate.css/master/animate.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/navbar-fixed.css">
+    <link rel="stylesheet" href="assets/ihover.min.css">
+    <link rel="stylesheet" href="assets/card.css">
+    <link rel="stylesheet" href="assets/slick.css">
+    <link rel="stylesheet" href="assets/gallery.css">
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<style>
+#header{
+    height: 50vh;
+}
+
+</style>
+<body>
+         <div class="clearfix">
+            <nav class="navbar navbar-expand-lg fixed-top bg-primary navbar-light" style="position:fixed !important" >
+                <a href="#"><img class="img img-fluid" style="max-width:100%;height:40px; border-radius: 100%;" src="data:image/jpeg;base64,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" alt=""></a>
+                      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                         <span class="navbar-toggler-icon"></span>
+                       </button>
+                      <div class="collapse navbar-collapse justify-content-around" id="navbarSupportedContent">
+                        <ul class="navbar-nav">
+                          <li class="nav-item">
+                            <a class="nav-link active" href="#About">About</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="#Projet">Projet </a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="#Activite">Activite </a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="#Galerie">Galerie</a>
+                          </li>
+                        </ul>
+                      </div>
+                 </nav>    
+            </div>
+            <header class="mt-5">
+                    <div id="headerCarousel" class="carousel slide carousel-fade" data-ride="carousel">
+                            <div class="carousel-inner">
+                              <div class="carousel-item active">
+                                <div class="mask flex-center">
+                                  <div class="container">
+                                    <div class="row align-items-center">
+                                      <div class="col-md-7 col-12 order-md-1 order-2">
+                                        <h4>Present your <br>
+                                          awesome product</h4>
+                                        <p>Lorem ipsum dolor sit amet. Reprehenderit, qui blanditiis quidem rerum <br>
+                                          necessitatibus praesentium voluptatum deleniti atque corrupti.</p>
+                                        <a href="#">BUY NOW</a> </div>
+                                      <div class="col-md-5 col-12 order-md-2 order-1"><img src="https://i.imgur.com/NKvkfTT.png" class="mx-auto" alt="slide"></div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="carousel-item">
+                                <div class="mask flex-center">
+                                  <div class="container">
+                                    <div class="row align-items-center">
+                                      <div class="col-md-7 col-12 order-md-1 order-2">
+                                        <h4>Present your <br>
+                                          awesome product</h4>
+                                        <p>Lorem ipsum dolor sit amet. Reprehenderit, qui blanditiis quidem rerum <br>
+                                          necessitatibus praesentium voluptatum deleniti atque corrupti.</p>
+                                        <a href="#">BUY NOW</a> </div>
+                                      <div class="col-md-5 col-12 order-md-2 order-1"><img src="https://i.imgur.com/duWgXRs.png" class="mx-auto" alt="slide"></div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="carousel-item">
+                                <div class="mask flex-center">
+                                  <div class="container">
+                                    <div class="row align-items-center">
+                                      <div class="col-md-7 col-12 order-md-1 order-2">
+                                        <h4>Present your <br>
+                                          awesome product</h4>
+                                        <p>Lorem ipsum dolor sit amet. Reprehenderit, qui blanditiis quidem rerum <br>
+                                          necessitatibus praesentium voluptatum deleniti atque corrupti.</p>
+                                        <a href="#">BUY NOW</a> </div>
+                                      <div class="col-md-5 col-12 order-md-2 order-1"><img src="https://i.imgur.com/DGkR4OQ.png" class="mx-auto" alt="slide"></div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <a class="carousel-control-prev" href="#headerCarousel" role="button" data-slide="prev"> <span class="carousel-control-prev-icon" aria-hidden="true"></span> <span class="sr-only">Previous</span> </a> <a class="carousel-control-next" href="#headerCarousel" role="button" data-slide="next"> <span class="carousel-control-next-icon" aria-hidden="true"></span> <span class="sr-only">Next</span> </a> </div>
+                          <!--slide end--> 
+            </header>
+          <div class="container-fluid section " style="height:auto;" id="About">
+            <div class="container ">
+                    <h1 class="text-heading text-center" style="border-bottom: 1px solid black;border-top: 1px solid black; padding: 5%">ABOUT</h1>
+              <div class="row ">
+                  <div class="row col-md-6">
+                <div class="col-md-6">
+                    <div class="card bg-dark text-white">
+                      <img class="card-img" src="image/img.jpg" alt="">
+                      <div class="card-img-overlay">
+                        <h4 class="card-title">iso nan</h4>
+                        <p class="card-text">lorem </p>
+                      </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                        <p class="text text-center text-align">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore, non tempore magnam voluptate sint ipsa, praesentium nobis aut consequatur, aliquam sed. Autem expedita voluptatum quas eligendi, voluptas quaerat esse nisi.</p>
+                    </div>
+            </div>
+            <div class="row col-md-6">
+                    <div class="col-md-6">
+                            <div class="card bg-dark text-white">
+                              <img class="card-img" src="image/img.jpg" alt="">
+                              <div class="card-img-overlay">
+                                <h4 class="card-title">iso nan</h4>
+                                <p class="card-text">lorem</p>
+                              </div>
+                            </div>
+                        </div>
+                    <div class="col-md-6">
+                        <p class="text text-center text-align">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore, non tempore magnam voluptate sint ipsa, praesentium nobis aut consequatur, aliquam sed. Autem expedita voluptatum quas eligendi, voluptas quaerat esse nisi.</p>
+                    </div>
+            </div>
+        </div>
+                
+              
+            </div>
+          </div>
+          <div class="container-fluid section" style="height: auto;" id="Projet">
+            <div class="container ">
+                    <h3 class="pb-3 mb-4 font-italic border-bottom text-center">
+                            Nos Projets
+                        </h3>
+                           <div class="row">
+                              <div class="col-md-6">
+                                 <div class="card flex-md-row mb-4 shadow-sm h-md-250">
+                                    <div class="card-body d-flex flex-column align-items-start">
+                                       <strong class="d-inline-block mb-2 text-primary">Projet 1</strong>
+                                       <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+                                       <div class="btn-group">
+                                            <a class="btn btn-outline-primary btn-sm" role="button" href="#" style="margin-right:2px;">Telecharger <i class="fa fa-download" aria-hidden="true"></i></a>
+                                            <a class="btn btn-outline-primary btn-sm" role="button" href="#">Continuer sur  github <i class="fa fa-github" aria-hidden="true"></i></a>
+                                       </div>
+                                    
+                                    </div>
+                                    <img class="card-img-right flex-auto d-none d-lg-block" alt="Thumbnail [200x250]" src="image/img.jpg" style="width: 200px; height: 250px;">
+                                 </div>
+                              </div>
+                              <div class="col-md-6">
+                                 <div class="card flex-md-row mb-4 shadow-sm h-md-250">
+                                    <div class="card-body d-flex flex-column align-items-start">
+                                       <strong class="d-inline-block mb-2 text-success">projet 2</strong>
+                                       <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+                                       <div class="btn-group">
+                                            <a class="btn btn-outline-success btn-sm" href="#" style="margin-right:2px;">Telecharger <i class="fa fa-download" aria-hidden="true"></i></a>
+                                            <a class="btn btn-outline-success btn-sm" href="#">Continuer sur  github <i class="fa fa-github" aria-hidden="true"></i></a>
+                                        </div>
+                                    </div>
+                                    <img class="card-img-right flex-auto d-none d-lg-block" alt="Thumbnail [200x250]" src="image/img.jpg" style="width: 200px; height: 250px;">
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="row">
+                              <div class="col-md-6">
+                                 <div class="card border-primary flex-md-row mb-4 shadow-sm h-md-250">
+                                    <div class="card-body d-flex flex-column align-items-start">
+                                       <strong class="d-inline-block mb-2 text-primary">projet 3</strong>
+                                       <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+                                       <div class="btn-group">
+                                            <a class="btn btn-outline-primary btn-sm" role="button" href="#" style="margin-right:2px;">Telecharger <i class="fa fa-download" aria-hidden="true"></i></a>
+                                            <a class="btn btn-outline-primary btn-sm" role="button" href="#">Continuer sur  github <i class="fa fa-github" aria-hidden="true"></i></a>
+                                       </div>
+                                    </div>
+                                    <img class="card-img-right flex-auto d-none d-lg-block" alt="Thumbnail [200x250]" src="image/img.jpg" style="width: 200px; height: 250px;">
+                                 </div>
+                              </div>
+                              <div class="col-md-6">
+                                 <div class="card border-success flex-md-row mb-4 shadow-sm h-md-250">
+                                    <div class="card-body d-flex flex-column align-items-start">
+                                       <strong class="d-inline-block mb-2 text-success">projet 4</strong>
+                                       <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+                                       <div class="btn-group">
+                                            <a class="btn btn-outline-success btn-sm" href="#" style="margin-right:2px;">Telecharger <i class="fa fa-download" aria-hidden="true"></i></a>
+                                            <a class="btn btn-outline-success btn-sm" href="#">Continuer sur  github <i class="fa fa-github" aria-hidden="true"></i></a>
+                                        </div>
+                                    </div>
+                                    <img class="card-img-right flex-auto d-none d-lg-block" alt="Thumbnail [200x250]" src="image/img.jpg" style="width: 200px; height: 250px;">
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="row">
+                              <div class="col-md-6">
+                                 <div class="card text-white bg-primary flex-md-row mb-4 shadow-sm h-md-250">
+                                    <div class="card-body d-flex flex-column align-items-start">
+                                       <strong class="d-inline-block mb-2 text-white">projet 5</strong>
+                                       <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+                                       <div class="btn-group">
+                                            <a class="btn btn-outline-light btn-sm" role="button" href="#" style="margin-right:2px;">Telecharger <i class="fa fa-download" aria-hidden="true"></i></a>
+                                            <a class="btn btn-outline-light btn-sm" role="button" href="#">Continuer sur  github <i class="fa fa-github" aria-hidden="true"></i></a>
+                                       </div>
+                                    </div>
+                                    <img class="card-img-right flex-auto d-none d-lg-block" alt="Thumbnail [200x250]" src="image/img.jpg" style="width: 200px; height: 250px;">
+                                 </div>
+                              </div>
+                              <div class="col-md-6">
+                                 <div class="card text-white bg-success flex-md-row mb-4 shadow-sm h-md-250">
+                                    <div class="card-body d-flex flex-column align-items-start">
+                                       <strong class="d-inline-block mb-2 text-white">Projet 6</strong>
+                                       <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+                                       <div class="btn-group">
+                                            <a class="btn btn-outline-light btn-sm" href="#" style="margin-right:2px;">Telecharger <i class="fa fa-download" aria-hidden="true"></i></a>
+                                            <a class="btn btn-outline-light btn-sm" href="#">Continuer sur  github <i class="fa fa-github" aria-hidden="true"></i></a>
+                                        </div>
+                                    </div>
+                                    <img class="card-img-right flex-auto d-none d-lg-block" alt="Thumbnail [200x250]" src="image/img.jpg" style="width: 200px; height: 250px;">
+                                 </div>
+                              </div>
+                           </div>
+            </div>
+          </div>
+          <div class="container-fluid section" style="height: auto;" id="Activite">
+            <div class="container ">
+             <h1 class="text-heading text-center" style="border-bottom: 1px solid black;border-top: 1px solid black; padding: 5%">ACTIVITE</h1>
+                    <div class="row">
+                            <div class="col-sm-4">
+                           
+                              <!-- normal -->
+                              <div class="ih-item circle effect10 top_to_bottom " style="margin: 10% auto">
+                                  <a href="#">
+                                      <div class="img "><img src="image/v0.jpg" alt="img"></div>
+                                      <div class="info">
+                                      <h3>LONBORGUINI</h3>
+                                      <p>Description goes here</p>
+                                      </div>
+                                  </a>
+                              </div>
+                              <!-- end normal -->
+                           
+                            </div>
+                            <div class="col-sm-4">
+                           
+                              <!-- colored -->
+                              <div class="ih-item circle colored effect10 top_to_bottom" style="margin: 10% auto"><a href="#">
+                                  <div class="img"><img src="image/v1.jpg" alt="img"></div>
+                                  <div class="info">
+                                    <h3>Heading here</h3>
+                                    <p>Description goes here</p>
+                                  </div></a></div>
+                              <!-- end colored -->
+                           
+                            </div>
+                            <div class="col-sm-4" >
+                           
+                                  <!-- normal -->
+                                  <div class="ih-item circle effect10 bottom_to_top" style="margin: 10% auto"><a href="#">
+                                      <div class="img"><img src="image/v2.jpg" alt="img"></div>
+                                      <div class="info">
+                                        <h3>Heading here</h3>
+                                        <p>Description goes here</p>
+                                      </div></a></div>
+                                  <!-- end normal -->
+                               
+                                </div>
+                                <div class="col-sm-4" >
+                           
+                                      <!-- normal -->
+                                      <div class="ih-item circle effect10 bottom_to_top" style="margin: 10% auto" ><a href="#">
+                                          <div class="img"><img src="image/v3.jpg" alt="img"></div>
+                                          <div class="info">
+                                            <h3>Heading here</h3>
+                                            <p>Description goes here</p>
+                                          </div></a></div>
+                                      <!-- end normal -->
+                                   
+                                    </div>
+                                    <div class="col-sm-4">
+                                   
+                                          <!-- normal -->
+                                          <div class="ih-item circle effect10 bottom_to_top" style="margin: 10% auto" ><a href="#">
+                                              <div class="img"><img src="image/v3.jpg" alt="img"></div>
+                                              <div class="info">
+                                                <h3>Heading here</h3>
+                                                <p>Description goes here</p>
+                                              </div></a></div>
+                                          <!-- end normal -->
+                                       
+                                        </div>
+                                    <div class="col-sm-4">
+                                   
+                                      <!-- colored -->
+                                      <div class="ih-item circle colored effect10 bottom_to_top" style="margin: 10% auto"><a href="#">
+                                          <div class="img"><img src="image/v4.jpg" alt="img"></div>
+                                          <div class="info">
+                                            <h3>Heading here</h3>
+                                            <p>Description goes here</p>
+                                          </div></a></div>
+                                      <!-- end colored -->
+                                   
+                          </div>
+            </div>
+          </div>
+          <div class="container-fluid section" style="height:auto;" id="Galerie">
+                <div class="container ">
+                        <div class="row">
+                                
+                                <div class="jumbotron text-center" style="margin-bottom:0; background-color: #FBFCFF;">
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-sm-12">
+                                                    <h1>Gallery</h1>
+                                                    <hr class="my-4">
+                                                    <div align="center">
+                                                      <button class="btn btn-primary active filter-button" data-filter="todo">Todo</button>
+                                                      <button class="btn btn-primary filter-button" data-filter="retratos">Retratos</button>
+                                                      <button class="btn btn-primary filter-button" data-filter="paisajes">Paisajes</button>
+                                                      <button class="btn btn-primary filter-button" data-filter="disenos">Diseños</button>
+                                  
+                                                          <div class="row">
+                                                              <div class="row">
+                                                                  <div class="col-lg-3 col-md-4 col-xs-6 thumb filter retratos">
+                                                                      <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title=""
+                                                                         data-image="image/img.jpg"
+                                                                         data-target="#image-gallery">
+                                                                          <img class="img-thumbnail"
+                                                                               src="image/img.jpg"
+                                                                               alt="Retratos">
+                                                                      </a>
+                                                                  </div>
+                                                                  <div class="col-lg-3 col-md-4 col-xs-6 thumb filter retratos">
+                                                                      <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title=""
+                                                                         data-image="image/img.jpg"
+                                                                         data-target="#image-gallery">
+                                                                          <img class="img-thumbnail"
+                                                                               src="image/img.jpg"
+                                                                               alt="Retratos">
+                                                                      </a>
+                                                                  </div>
+                                                                  <div class="col-lg-3 col-md-4 col-xs-6 thumb filter retratos">
+                                                                      <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title=""
+                                                                         data-image="image/img.jpg"
+                                                                         data-target="#image-gallery">
+                                                                          <img class="img-thumbnail"
+                                                                               src="image/img.jpg"
+                                                                               alt="Retratos">
+                                                                      </a>
+                                                                  </div>
+                                                                  <div class="col-lg-3 col-md-4 col-xs-6 thumb filter paisajes">
+                                                                      <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title=""
+                                                                         data-image="image/img.jpg"
+                                                                         data-target="#image-gallery">
+                                                                          <img class="img-thumbnail"
+                                                                               src="image/img.jpg"
+                                                                               alt="Paisaje">
+                                                                      </a>
+                                                                  </div>
+                                                                  <div class="col-lg-3 col-md-4 col-xs-6 thumb filter disenos">
+                                                                      <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title=""
+                                                                         data-image="image/img.jpg"
+                                                                         data-target="#image-gallery">
+                                                                          <img class="img-thumbnail"
+                                                                               src="image/img.jpg"
+                                                                               alt="Paisaje">
+                                                                      </a>
+                                                                  </div>
+                                                                  <div class="col-lg-3 col-md-4 col-xs-6 thumb filter disenos">
+                                                                      <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title=""
+                                                                         data-image="image/img.jpg"
+                                                                         data-target="#image-gallery">
+                                                                          <img class="img-thumbnail"
+                                                                               src="image/img.jpg"
+                                                                               alt="Paisaje">
+                                                                      </a>
+                                                                  </div>
+                                                                  <div class="col-lg-3 col-md-4 col-xs-6 thumb filter disenos">
+                                                                      <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title=""
+                                                                         data-image="image/img.jpg"
+                                                                         data-target="#image-gallery">
+                                                                          <img class="img-thumbnail"
+                                                                               src="image/img.jpg"
+                                                                               alt="Paisaje">
+                                                                      </a>
+                                                                  </div>
+                                                              </div>
+                                  
+                                                              <div class="modal fade" id="image-gallery" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                                                  <div class="modal-dialog modal-lg">
+                                                                      <div class="modal-content">
+                                                                          <div class="modal-header">
+                                                                              <h4 class="modal-title" id="image-gallery-title"></h4>
+                                                                              <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span>
+                                                                              </button>
+                                                                          </div>
+                                                                          <div class="modal-body">
+                                                                              <img id="image-gallery-image" class="img-responsive col-md-12" src="">
+                                                                          </div>
+                                                                          <div class="modal-footer">
+                                                                              <button type="button" class="btn btn-secondary float-left" id="show-previous-image"><i class="fa fa-arrow-left"></i>
+                                                                              </button>
+                                  
+                                                                              <button type="button" id="show-next-image" class="btn btn-secondary float-right"><i class="fa fa-arrow-right"></i>
+                                                                              </button>
+                                                                          </div>
+                                                                      </div>
+                                                                  </div>
+                                                              </div>
+                                                          </div>
+                                                      </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                      </div>
+                  </div>
+                </div>
+              </div>
+              <footer id="dk-footer" class="dk-footer">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12 col-lg-4">
+                                <div class="dk-footer-box-info">
+                                    <p class="footer-info-text">
+                                       Reference site about Lorem Ipsum, giving information on its origins, as well as a random Lipsum generator.
+                                    </p>
+                                    <div class="footer-social-link">
+                                        <h3>Follow us</h3>
+                                        <ul>
+                                            <li>
+                                                <a href="https://github.com" target="_blank">
+                                                    <i class="fa fa-github"></i>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="https://twitter.com" target="_blank">
+                                                    <i class="fa fa-twitter"></i>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="https://google.com" target="_blank">
+                                                    <i class="fa fa-google-plus"></i>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="https://linkedin.fr" target="_blank">
+                                                    <i class="fa fa-linkedin"></i>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="https://instagram.com" target="_blank"> 
+                                                    <i class="fa fa-instagram"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <!-- End Social link -->
+                                </div>
+                                <!-- End Footer info -->
+                                <div class="footer-awarad">
+                                    <img src="images/icon/best.png" alt="">
+                                    <p>Best Design Company 2019</p>
+                                </div>
+                            </div>
+                            <!-- End Col -->
+                                    <!-- End col -->
+                                    <div class="col-md-12 col-lg-6">
+                                        <div class="footer-widget">
+                                            <form action="#">
+                                                <div class="form-row">
+                                                    <div class="col dk-footer-form">
+                                                        <input type="email" class="form-control" placeholder="Email Address">
+                                                        <button type="submit">
+                                                            <i class="fa fa-send"></i>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                            <!-- End form -->
+                                        </div>
+                                        <!-- End footer widget -->
+                                    </div>
+                            <!-- End Col -->
+                        </div>
+                        <!-- End Widget Row -->
+                    </div>
+                    <!-- End Contact Container -->
+            
+            
+                    <div class="copyright">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <span>Copyright © 2019, All Right Reserved</span>
+                                </div>
+                                <!-- End Col -->
+                                <div class="col-md-6">
+                                    <div class="copyright-menu">
+                                        <ul>
+                                            <li>
+                                                <a href="#">Home</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Terms</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Privacy Policy</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Contact</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <!-- End col -->
+                            </div>
+                            <!-- End Row -->
+                        </div>
+                        <!-- End Copyright Container -->
+                    </div>
+                    <!-- End Copyright -->
+                    <!-- Back to top -->
+                    <div id="back-to-top" class="back-to-top">
+                        <button class="btn btn-dark" title="Back to Top" style="display: block;">
+                            <i class="fa fa-angle-up"></i>
+                        </button>
+                    </div>
+                    <!-- End Back to top -->
+            </footer>
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/navbar-fixed.js"></script>
+    <script>
+         
+            let modalId = $('#image-gallery');
+     
+     $(document)
+       .ready(function () {
+        $('#headerCarousel').carousel({
+    interval: 3000,
+ })
+         loadGallery(true, 'a.thumbnail');
+     
+         //This function disables buttons when needed
+         function disableButtons(counter_max, counter_current) {
+           $('#show-previous-image, #show-next-image')
+             .show();
+           if (counter_max === counter_current) {
+             $('#show-next-image')
+               .hide();
+           } else if (counter_current === 1) {
+             $('#show-previous-image')
+               .hide();
+           }
+         }
+     
+         /**
+          *
+          * @param setIDs        Sets IDs when DOM is loaded. If using a PHP counter, set to false.
+          * @param setClickAttr  Sets the attribute for the click handler.
+          */
+     
+         function loadGallery(setIDs, setClickAttr) {
+           let current_image,
+             selector,
+             counter = 0;
+     
+           $('#show-next-image, #show-previous-image')
+             .click(function () {
+               if ($(this)
+                 .attr('id') === 'show-previous-image') {
+                 current_image--;
+               } else {
+                 current_image++;
+               }
+     
+               selector = $('[data-image-id="' + current_image + '"]');
+               updateGallery(selector);
+             });
+     
+           function updateGallery(selector) {
+             let $sel = selector;
+             current_image = $sel.data('image-id');
+             $('#image-gallery-title')
+               .text($sel.data('title'));
+             $('#image-gallery-image')
+               .attr('src', $sel.data('image'));
+             disableButtons(counter, $sel.data('image-id'));
+           }
+     
+           if (setIDs == true) {
+             $('[data-image-id]')
+               .each(function () {
+                 counter++;
+                 $(this)
+                   .attr('data-image-id', counter);
+               });
+           }
+           $(setClickAttr)
+             .on('click', function () {
+               updateGallery($(this));
+             });
+         }
+       });
+     
+     // build key actions
+     $(document)
+       .keydown(function (e) {
+         switch (e.which) {
+           case 37: // left
+             if ((modalId.data('bs.modal') || {})._isShown && $('#show-previous-image').is(":visible")) {
+               $('#show-previous-image')
+                 .click();
+             }
+             break;
+     
+           case 39: // right
+             if ((modalId.data('bs.modal') || {})._isShown && $('#show-next-image').is(":visible")) {
+               $('#show-next-image')
+                 .click();
+             }
+             break;
+     
+           default:
+             return; // exit this handler for other keys
+         }
+         e.preventDefault(); // prevent the default action (scroll / move caret)
+       });
+     
+     //Filter Button
+     
+     $(document).ready(function(){
+     
+       $(".filter-button").click(function(){
+           var value = $(this).attr('data-filter');
+           
+           if(value == "todo")
+           {
+               //$('.filter').removeClass('hidden');
+               $('.filter').show('1000');
+           }
+           else
+           {
+     //            $('.filter[filter-item="'+value+'"]').removeClass('hidden');
+     //            $(".filter").not('.filter[filter-item="'+value+'"]').addClass('hidden');
+               $(".filter").not('.'+value).hide('3000');
+               $('.filter').filter('.'+value).show('3000');
+               
+           }
+       });
+     
+     });
+     
+         </script>
+</body>
+</html>
